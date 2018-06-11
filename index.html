@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>桂电一键评教系统</title>
+</head>
+
+<body>
+    <h1>桂电一键评教系统</h1>
+    <p>第一步：登陆，并点击左侧导航栏的“学生评教”。如果评教系统网址有变，可以在这里修改
+        <input type="text" id="address" value="http://bkjw2.guet.cn/" />
+    </p>
+    <p>第二步：
+        <button id="go">一键评教</button>
+    </p>
+
+    <div>
+        <webview id="bkjw" src="http://bkjw2.guet.cn/student/public/login.asp" style="display:flex; width:1366px; height:450px"
+        />
+    </div>
+    <br />
+    <div>
+        <pre>Copyright [2018] [Chengjun Tang]
+
+            Licensed under the Apache License, Version 2.0 (the "License");
+            you may not use this file except in compliance with the License.
+            You may obtain a copy of the License at
+            
+                http://www.apache.org/licenses/LICENSE-2.0
+            
+            Unless required by applicable law or agreed to in writing, software
+            distributed under the License is distributed on an "AS IS" BASIS,
+            WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+            See the License for the specific language governing permissions and
+            limitations under the License.
+            </pre>
+    </div>
+
+    <script>
+        onload = function () {
+            address = document.getElementById("address")
+            bkjw = document.getElementById("bkjw")
+
+            address.onblur = function () {
+                address.loadURL(address.value + "student/public/login.asp")
+            }
+
+            document.getElementById("go").onclick = function () {
+                bkjw.executeJavaScript('count=0;a=document.getElementsByName("main")[0].contentDocument.getElementsByTagName("a");cf=document.getElementsByName("contents")[0];cf.onload=function(){all=cf.contentDocument.getElementsByTagName("input");s=cf.contentDocument.getElementsByName("lwBtntijiao")[0];if(s!=undefined){for(i=0;i<all.length;i++){if(all[i].value==100)all[i].checked=true;};s.onclick=null;s.click();}else if(count+1<a.length){count++;cf.src=a[count].href}else{cf.onload=null;window.location.href="' + address.value + 'student/stjxpg.asp"}};cf.src=a[count];')
+            }
+        }
+    </script>
+</body>
+
+</html>

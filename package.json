@@ -1,0 +1,23 @@
+{
+  "name": "guet-pingjiao",
+  "version": "1.0.0",
+  "description": "As the package name shows, it is a GUET's pingjiao tool.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dongwil/guet-pingjiao.git"
+  },
+  "author": "Dongwil Tang",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Dongwil/guet-pingjiao/issues"
+  },
+  "homepage": "https://github.com/Dongwil/guet-pingjiao#readme",
+  "devDependencies": {
+    "electron": "^2.0.2",
+    "electron-packager": "^12.1.0"
+  }
+}
