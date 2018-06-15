@@ -62,3 +62,4 @@ typings/
 
 package-lock.json
 guet-pingjiao-win32-ia32
+guet-pingjiao-win32-x64
